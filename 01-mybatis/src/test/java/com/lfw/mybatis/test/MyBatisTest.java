@@ -20,7 +20,6 @@ public class MyBatisTest {
      * 可以使用SqlSessionFactory.openSession(true);
      */
 
-
     @Test
     public void testMyBatis() throws IOException {
         //加载核心配置文件
