@@ -35,6 +35,7 @@
     <result property="age" column="age"></result>
     <result property="sex" column="sex"></result>
     <result property="email" column="email"></result>
+    <!--级联属性映射-->
     <result property="dept.did" column="did"></result>
     <result property="dept.deptName" column="dept_name"></result>
   </resultMap>
@@ -57,7 +58,7 @@
   </resultMap>
   <!--Emp getEmpAndDept(@Param("eid") Integer eid);-->
   <select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
-        select * from t_emp left join t_dept on t_emp.did = t_dept .did where t_emp.eid = #{eid}
+        select * from t_emp left join t_dept on t_emp.did = t_dept.did where t_emp.eid = #{eid}
     </select>
 
   <resultMap id="empAndDeptByStepResultMap" type="Emp">
