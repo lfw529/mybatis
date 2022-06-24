@@ -10,7 +10,8 @@ public interface DynamicSQLMapper {
    * 多条查询
    */
   List<Emp> getEmpByCondition(Emp emp);
-
+  List<Emp> getEmpByConditionOne(Emp emp);
+  List<Emp> getEmpByConditionTwo(Emp emp);
   /**
    * 测试choose、when、otherwise
    */

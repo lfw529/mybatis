@@ -16,7 +16,7 @@
       column：设置映射关系中的字段名，必须是sql语句查询出的字段名
   -->
   <resultMap id="empResultMap" type="Emp">
-    <id property="eid" column="id"></id>
+    <id property="eid" column="eid"></id>
     <result property="empName" column="emp_name"></result>
     <result property="age" column="age"></result>
     <result property="sex" column="gender"></result>
@@ -33,7 +33,7 @@
     <id property="eid" column="eid"></id>
     <result property="empName" column="emp_name"></result>
     <result property="age" column="age"></result>
-    <result property="sex" column="sex"></result>
+    <result property="sex" column="gender"></result>
     <result property="email" column="email"></result>
     <!--级联属性映射-->
     <result property="dept.did" column="did"></result>
@@ -44,7 +44,7 @@
     <id property="eid" column="eid"></id>
     <result property="empName" column="emp_name"></result>
     <result property="age" column="age"></result>
-    <result property="sex" column="sex"></result>
+    <result property="sex" column="gender"></result>
     <result property="email" column="email"></result>
     <!--
         association:处理多对一的映射关系
@@ -65,7 +65,7 @@
     <id property="eid" column="eid"></id>
     <result property="empName" column="emp_name"></result>
     <result property="age" column="age"></result>
-    <result property="sex" column="sex"></result>
+    <result property="sex" column="gender"></result>
     <result property="email" column="email"></result>
     <!--
         select:设置分步查询的sql的唯一标识（namespace.SQLId或mapper接口的全类名.方法名）

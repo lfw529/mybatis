@@ -17,7 +17,8 @@ public interface DeptMapper {
   Dept getDeptAndEmp(@Param("did") Integer did);
 
   /**
-   * 通过分步查询查询部门中所有的员工信息 分布查询第一步：查询部门信息
+   * 通过分步查询查询部门中所有的员工信息
+   * 分布查询第一步：查询部门信息
    */
   Dept getDeptAndEmpByStepOne(@Param("did") Integer did);
 }
