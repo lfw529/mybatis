@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-
 public class MyBatisTest {
 
     /**
@@ -47,10 +46,9 @@ public class MyBatisTest {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         mapper.updateUser();
         //mapper.deleteUser();
-        /*User user = mapper.getUserById();
+        /* User user = mapper.getUserById();
         System.out.println(user);*/
         List<User> list = mapper.getAllUser();
         list.forEach(user -> System.out.println(user));
     }
-
 }
