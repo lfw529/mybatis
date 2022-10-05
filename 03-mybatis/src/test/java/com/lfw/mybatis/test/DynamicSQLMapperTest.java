@@ -46,10 +46,18 @@ public class DynamicSQLMapperTest {
   }
 
   @Test
+  public void testUpdateEmp() {
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
+    int emp = mapper.updateEmp(new Emp(10, "李富文", 18, "男", null));
+    System.out.println(emp);
+  }
+
+  @Test
   public void testGetEmpByChoose() {
     SqlSession sqlSession = SqlSessionUtils.getSqlSession();
     DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
-    List<Emp> list = mapper.getEmpByCondition(new Emp(null, "", null, "", null));
+    List<Emp> list = mapper.getEmpByChoose(new Emp(null, "", null, "", null));
     System.out.println(list);
   }
 
@@ -71,4 +79,12 @@ public class DynamicSQLMapperTest {
     List<Emp> emps = Arrays.asList(emp1, emp2, emp3);
     System.out.println(mapper.insertMoreByList(emps));
    }
+
+  @Test
+  public void testFindName() {
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
+    List<Emp> result = mapper.findName(new Emp(null, "张", null, "", null));
+    System.out.println(result);
+  }
 }

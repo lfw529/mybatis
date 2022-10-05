@@ -12,7 +12,7 @@
     <result property="email" column="email"></result>
   </resultMap>
 
-  <!-- where/if 标签 使用 -->
+  <!-- if 标签 单独使用 -->
   <select id="getEmpByConditionOne" resultMap="empResultMap">
     select * from t_emp where 1=1 and
     <if test="empName != null and empName != ''">
@@ -29,7 +29,7 @@
     </if>
   </select>
 
-  <!-- if 标签 单独使用 -->
+  <!-- where/if 标签 使用 -->
   <select id="getEmpByConditionTwo" resultMap="empResultMap">
     select * from t_emp
     <where>
@@ -118,4 +118,23 @@
     </foreach>
   </insert>
 
+  <update id="updateEmp">
+    update t_emp
+    <set>
+      <if test="empName != null">emp_name = #{empName},</if>
+      <if test="age != null">age = #{age},</if>
+      <if test="sex != null">gender = #{sex},</if>
+      <if test="email != null">email = #{email}</if>
+    </set>
+  </update>
+
+  <select id="findName" resultType="String">
+    select * from t_emp
+    <where>
+      <if test="empName != null">
+        <bind name="empName" value="'%' + empName + '%'"/>
+        emp_name like #{empName}
+      </if>
+    </where>
+  </select>
 </mapper>
